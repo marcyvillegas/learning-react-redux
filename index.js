@@ -42,6 +42,15 @@ import { legacy_createStore as createStore, combineReducers, applyMiddleware } f
 import pkg from 'redux-logger';
 const { logger } = pkg;
 
+// INITIAL STATE EXAMPLE
+const initialCakeState = {
+    numberOfCakes: 10
+}
+
+const initialIceCreamState = {
+    numberOfIceCreams: 40
+}
+
 // ACTION EXAMPLE
 const BUY_CAKE = "BUY_CAKE";
 const BUY_ICECREAM = "BUY_ICECREAM";
@@ -62,14 +71,6 @@ function buyIceCream() {
 
 // REDUCER EXAMPLE
 // (previousState, action) => newState
-const initialCakeState = {
-    numberOfCakes: 10
-}
-
-const initialIceCreamState = {
-    numberOfIceCreams: 40
-}
-
 const cakeReducer = (state = initialCakeState, action) => {
 
     switch (action.type) {
@@ -101,7 +102,7 @@ const rootReducer = combineReducers({
     cake: cakeReducer,
     iceCream: iceCreamReducer,
 });
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger)); // logger <- middleware
 
 // 1st Responsibility
 console.log("Initial state", store.getState());
