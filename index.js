@@ -38,7 +38,9 @@ v
 - subscribe(listener) -> registers listeners
 */
 
-import { legacy_createStore as createStore, combineReducers } from "redux";
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
+import pkg from 'redux-logger';
+const { logger } = pkg;
 
 // ACTION EXAMPLE
 const BUY_CAKE = "BUY_CAKE";
@@ -99,13 +101,13 @@ const rootReducer = combineReducers({
     cake: cakeReducer,
     iceCream: iceCreamReducer,
 });
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 // 1st Responsibility
 console.log("Initial state", store.getState());
 
 // 4th Responsibility
-const unsubscribe = store.subscribe(() => console.log("Updated state", store.getState()));
+const unsubscribe = store.subscribe(() => { });
 
 // 3rd Responsibility
 store.dispatch(buyCake());
