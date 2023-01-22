@@ -17,7 +17,7 @@ Reducer -> ties the store and action together
         numerOfCakes: 10
     }
 
-2. The only way to change a state is to emit an action , an object describing what happened.
+2. The only way to change a state is to emit an action, an object describing what happened.
     - action example: BUY_CAKE
     - Example:
     {
@@ -26,7 +26,7 @@ Reducer -> ties the store and action together
 
 3. To specify how the state tree is transformed by actions, you write pure reducers.
     - Reducer -> (previousState, action) => newState
-v 
+
 >> ACTIONS
 - only way your application can interact with the store
 - have a type property
@@ -41,15 +41,6 @@ v
 import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
 import pkg from 'redux-logger';
 const { logger } = pkg;
-
-// INITIAL STATE EXAMPLE
-const initialCakeState = {
-    numberOfCakes: 10
-}
-
-const initialIceCreamState = {
-    numberOfIceCreams: 40
-}
 
 // ACTION EXAMPLE
 const BUY_CAKE = "BUY_CAKE";
@@ -71,6 +62,16 @@ function buyIceCream() {
 
 // REDUCER EXAMPLE
 // (previousState, action) => newState
+
+// Initial State
+const initialCakeState = {
+    numberOfCakes: 10
+}
+
+const initialIceCreamState = {
+    numberOfIceCreams: 40
+}
+
 const cakeReducer = (state = initialCakeState, action) => {
 
     switch (action.type) {
