@@ -6,9 +6,9 @@ Yt link: https://www.youtube.com/watch?v=EKsoj96HQGY&list=PLC3y8-rFHvwheJHvseC3I
 == LESSONS 1 T0 10 ==
 
 >> 3 Core Concepts
-Store -> holds the state
-Action -> describes what happen
-Reducer -> ties the store and action together
+(Shop) Store -> holds the state
+(Intention to BUY_CAKE) Action -> describes what happen
+(Shopkeeper) Reducer -> ties the store and action together
 
 >> 3 Principles
 1. The state of your whole application is stored in an object tree within a single store.
@@ -17,7 +17,7 @@ Reducer -> ties the store and action together
         numerOfCakes: 10
     }
 
-2. The only way to change a state is to emit an action, an object describing what happened.
+2. The only way to change a state is to emit an action, an object describing what happened. State is read-only.
     - action example: BUY_CAKE
     - Example:
     {

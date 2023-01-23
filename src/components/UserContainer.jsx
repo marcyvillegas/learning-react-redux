@@ -11,18 +11,14 @@ function UserContainer({ fetchUsers, userData }) {
     return (
         <div>
             <h1>From UserContainer Async Actions {"(Fetching from API)"}</h1>
-            {
-                userData.loading
-                    ? <h3>Loading...</h3>
-                    : userData?.data?.map(
-                        item => (
-                            <p key={item.id}>{item.name}</p>
-                        ))
-            }
+            {userData.loading
+                ? <h3>Loading...</h3>
+                : userData?.data?.map(
+                    item => (
+                        <p key={item.id}>{item.name}</p>
+                    ))}
 
-            {
-                userData?.error !== "" && <p>{userData.error}</p>
-            }
+            {userData?.error !== "" && <p>{userData.error}</p>}
         </div>
     );
 }

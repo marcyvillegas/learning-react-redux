@@ -28,7 +28,7 @@ export const fetchUsers = () => {
 
     return async dispatch => {
 
-        dispatch(fetchUsersRequest);
+        dispatch(fetchUsersRequest); // dispatch <- call the action / to trigger the state change
 
         try {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users');
