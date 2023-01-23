@@ -34,7 +34,7 @@ const fetchUsersFailure = error => {
     }
 }
 
-// Async functions
+// Async function
 const fetchUsers = () => {
     return async function(dispatch) {
 
